@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" >
+    <script src="server.js" defer></script>
+    <title>Wellness App</title>
+</head>
+<body>
+    <div class = "mainDiv">
+    <h1>Wellness App</h1>
+        <ul class = "activities">
+            <% for(let i = 0; i < info.length; i++) {%>
+                <li class="activity">
+                    <span><%= info[i].activityName %></span>
+                    <span><%= info[i].time %></span>
+                </li>
+            <% } %>
+        </ul>
+        <h2>Choose activity:</h2>
+        <form action="/addActivity" method="POST">
+            <input type = "text" placeholder="activity" name="activityName">
+            <input type="text" placeholder="time" name="time">
+            <input type="submit">
+        </form>
+    </div>
+</body>
+</html>

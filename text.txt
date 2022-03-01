@@ -1,0 +1,6 @@
+       <% for(let i = 0; i < info.length; i++) {%>
+            <li class="activity">
+                <span><%= info[i].activityName %></span>
+                <span><%= info[i].time %></span>
+            </li>
+        <% } %>
