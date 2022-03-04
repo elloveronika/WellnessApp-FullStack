@@ -47,6 +47,18 @@ app.post("/addActivity", (request, response) => {
     .catch((error) => console.error(error));
 });
 
+app.put("/addTotal", (request, response) => {
+  db.collection("activities")
+    .updateOne({
+      total: request.body.total,
+    })
+    .then((result) => {
+      console.log("Added One Like");
+      response.json("Like Added");
+    })
+    .catch((error) => console.error(error));
+});
+
 app.listen(port, () => {
   console.log(`running on port ${port}`);
 });
